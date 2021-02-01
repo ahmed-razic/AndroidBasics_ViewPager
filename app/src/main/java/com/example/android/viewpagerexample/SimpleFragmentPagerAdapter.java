@@ -26,8 +26,8 @@ import androidx.fragment.app.FragmentPagerAdapter;
  */
 public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 
-    public SimpleFragmentPagerAdapter(@NonNull FragmentManager fm, int behavior) {
-        super(fm, behavior);
+    public SimpleFragmentPagerAdapter(FragmentManager fm) {
+        super(fm);
     }
 
     @NonNull
@@ -37,10 +37,15 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
             return new MondayFragment();
         } else if (position == 1){
             return new TuesdayFragment();
-        } else {
+        } else if (position == 2) {
             return new WednesdayFragment();
+        } else if (position == 3) {
+            return new ThursdayFragment();
+        } else {
+            return new FridayFragment();
         }
     }
+
 
     @Override
     public int getCount() {
