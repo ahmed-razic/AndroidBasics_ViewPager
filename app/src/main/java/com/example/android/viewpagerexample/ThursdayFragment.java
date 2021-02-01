@@ -15,35 +15,20 @@
  */
 package com.example.android.viewpagerexample;
 
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
 
 /**
- * Provides the appropriate {@link Fragment} for a view pager.
+ * Fragment that displays "Monday".
  */
-public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
-
-    public SimpleFragmentPagerAdapter(@NonNull FragmentManager fm, int behavior) {
-        super(fm, behavior);
-    }
-
-    @NonNull
-    @Override
-    public Fragment getItem(int position) {
-        if (position == 0) {
-            return new MondayFragment();
-        } else if (position == 1){
-            return new TuesdayFragment();
-        } else {
-            return new WednesdayFragment();
-        }
-    }
+public class ThursdayFragment extends Fragment {
 
     @Override
-    public int getCount() {
-        return 5;
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_thursday, container, false);
     }
 }
